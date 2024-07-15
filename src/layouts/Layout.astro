@@ -1,0 +1,353 @@
+---
+import Favicons from "../components/atoms/Favicons.astro";
+import MainMetas from "../components/atoms/MainMetas.astro";
+import OGMetas from '../components/atoms/Favicons.astro';
+
+import Nav from "../components/organisms/Nav.astro";
+interface Props {
+  title: string;
+  description: string;
+  img: string;
+}
+
+const { title, description, img } = Astro.props;
+
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <MainMetas
+      title=`${title} | Guadalajara - Zapopan`
+      description={description}
+      img_social={img}
+    />
+    <title>
+      {
+        `Cid ${title} | Guadalajara - Zapopan`
+      }
+    </title>
+
+    <Favicons title={title} />
+
+    <!--Imagenes sociales!! 🧑‍🤝‍🧑 -->
+
+    <OGMetas title={title} description={description} img_social={img} />
+
+    <link
+      itemprop="thumbnailUrl"
+      href="https://res.cloudinary.com/dp9ldjfem/image/upload/v1714516496/agency/Social/t2amb5ggyzgdhrwngevs.webp"
+    />
+
+    <!-- -->
+
+    <link
+      itemprop="thumbnailUrl"
+      href="https://res.cloudinary.com/dp9ldjfem/image/upload/v1714516496/agency/Social/t2amb5ggyzgdhrwngevs.webp"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HM4MX68LW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(a: string, b: string | object) {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-9HM4MX68LW");
+    </script>
+  </head>
+  <body id="home">
+    <slot />
+    <style is:global lang="scss">
+      :root {
+        --Black-BG: #121214;
+        --padding: 0 20px;
+        --m-top: 86px;
+      }
+
+      // 🤖 reset
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+
+        // Delete background blue in chome
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      body,
+      html {
+        margin: 0;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-wrap: balance;
+      }
+
+      p {
+        text-wrap: pretty;
+      }
+
+      /**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+      abbr[title] {
+        border-bottom: none;
+        /* 1 */
+        text-decoration: underline;
+        /* 2 */
+        text-decoration: underline dotted;
+        /* 2 */
+      }
+
+      b,
+      strong {
+        font-weight: bolder;
+      }
+
+      /**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        /* 1 */
+        font-size: 100%;
+        /* 1 */
+        line-height: 1.15;
+        /* 1 */
+        margin: 0;
+        /* 2 */
+      }
+
+      /**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+      button,
+      select {
+        /* 1 */
+        text-transform: none;
+      }
+
+      button,
+      [type="button"],
+      [type="reset"],
+      [type="submit"] {
+        -webkit-appearance: button;
+      }
+
+      /**
+ * Remove the inner border and padding in Firefox.
+ */
+
+      button::-moz-focus-inner,
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+
+      /**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+      button:-moz-focusring,
+      [type="button"]:-moz-focusring,
+      [type="reset"]:-moz-focusring,
+      [type="submit"]:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+
+      /**
+ * Correct the padding in Firefox.
+ */
+
+      fieldset {
+        padding: 0.35em 0.75em 0.625em;
+      }
+
+      /**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+      [type="number"]::-webkit-inner-spin-button,
+      [type="number"]::-webkit-outer-spin-button {
+        height: auto;
+      }
+
+      //  reset ****************************************************
+
+      @font-face {
+        font-family: "Satoshi-Regular";
+        src: url("/fonts/Satoshi-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Satoshi-Medium";
+        src: url("/fonts/Satoshi-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "SpaceGrotesk-Regular";
+        src: url("/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "SpaceGrotesk-Medium";
+        src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        // scroll-padding-top: 70px;
+      }
+      body {
+        color: #fff;
+        overflow-x: hidden;
+
+        width: 100%;
+
+        background-color: var(--Black-BG);
+        font-family: "Satoshi-Regular";
+        transition: font-size 0.3s ease-in-out;
+
+        padding-top: 70px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        transition: font-size 0.3s ease-in-out;
+        text-transform: uppercase;
+        margin: 0.5rem 0;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: normal;
+      }
+
+      .text-up {
+        text-transform: uppercase;
+      }
+      .text-low {
+        text-transform: lowercase;
+      }
+      .text-cap {
+        text-transform: capitalize;
+      }
+      .head-three-alt {
+        font-family: "Satoshi-Regular";
+        font-size: 32px;
+        font-weight: 400;
+      }
+
+      ::selection {
+        background: rebeccapurple;
+        color: tomato;
+      }
+
+      @keyframes show {
+        from {
+          opacity: 0;
+          scale: 25%;
+        }
+
+        to {
+          opacity: 1;
+          scale: 100%;
+        }
+      }
+
+      @keyframes sliderL {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes sliderR {
+        from {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .show {
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+
+        animation-timeline: --image;
+        animation-name: show;
+
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
+      }
+
+      .showR {
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+
+        animation-timeline: --image;
+        animation-name: sliderR;
+
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
+      }
+
+      .showL {
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+
+        animation-timeline: --image;
+        animation-name: sliderL;
+
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
+      }
+    </style>
+  </body>
+</html>

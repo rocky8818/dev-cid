@@ -1,0 +1,15 @@
+---
+const props: Props = Astro.props;
+
+interface Props {
+  title: string;
+  description: string;
+  img_social: string;
+}
+---
+
+<meta charset="UTF-8" />
+<meta name="title" content={props.title} />
+<meta name="description" content={props.description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />

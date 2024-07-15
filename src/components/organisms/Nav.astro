@@ -1,0 +1,189 @@
+---
+const { proy_link } = Astro.props;
+import DevFrame from '../svg/DevFrame.astro';
+---
+
+<nav
+  id="sticky-menu"
+  title="Cid | Agencia Digital | Publicidad y Diseño | Guadalajara - Zapopan"
+>
+  <a
+    title="Cid | Agencia Digital | Publicidad y Diseño | Guadalajara - Zapopan"
+    href="https://www.cid.mx"
+  >
+    <DevFrame />
+    <h1 style="align-self: flex-end; margin-bottom: 0px;">
+      Centro Integral De Diseño
+    </h1>
+  </a>
+
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" id="menu-icon">
+    <div></div>
+  </label>
+  <div class="menu">
+    <div class="links">
+      <div class="links1">
+        <a href="https://agencia.cid.mx" class="menu__btn">Inicio</a>
+        <a href="#about" class="menu__btn">Quiénes somos</a>
+        <a href="#servicios" class="menu__btn">Servicios</a>
+        <a href={proy_link} class="menu__btn">Proyectos</a>
+        <a href="https://cid.mx/contacto" class="menu__btn">Contacto</a>
+        <hr style="width: 100%" />
+      </div>
+      <div class="links2">
+        <p>También te puede interesar</p>
+        <a href={proy_link} class="menu__btn">Escuela</a>
+        {
+          /* 
+        <a href="#about" class="menu__btn">development</a>
+        <hr style="width: 100%" />
+        <p class="menu__btn">idioma</p>
+        <button class="lan-btn">esp</button>
+        <a href="#contact" class="menu__btn">marketing</a>*/
+        }
+      </div>
+      <div class="links1"></div>
+    </div>
+  </div>
+</nav>
+
+<style lang="scss">
+  .logoAnimation {
+  }
+
+  .lan-btn {
+    margin-top: 5px;
+    color: #fff;
+    display: inline-flex;
+    padding: 10px 32px 14px 32px;
+    align-items: center;
+    border-radius: 32px;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  #sticky-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    padding: 15px 14px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      color: white;
+      gap: 1rem;
+      font-size: 10px;
+    }
+    h1 {
+      align-self: flex-end;
+      margin-bottom: 0px;
+      display: none;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    #menu-icon {
+      cursor: pointer;
+      z-index: 3;
+
+      width: 34px;
+      height: 34px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M0 11H30M0 3H30M0 19H30M0 27H30" stroke="white"></path></svg>');
+      background-size: 100% 100%;
+    }
+
+    .menu {
+      transition:
+        max-width 0.5s,
+        visibility 0.5s ease-out;
+
+      visibility: hidden;
+      max-width: 0rem;
+
+      width: 100%;
+
+      padding: 0;
+      margin: 0;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      background-color: var(--Black-BG);
+
+      height: 100vh;
+      height: 100dvh;
+
+      display: flex;
+      flex-direction: column;
+
+      .links {
+        visibility: hidden;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px 16px;
+        justify-content: flex-start;
+        align-items: center;
+        .links1 {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .links2 {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          p.idioma {
+            color: var(--Gray-DLR, #9eacaa);
+            font-size: 32px;
+            text-decoration: none;
+          }
+        }
+
+        a {
+          color: white;
+          //color: var(--Gray-DLR, #9eacaa);
+          font-size: 32px;
+          text-decoration: none;
+        }
+      }
+    }
+
+    #menu-toggle:checked ~ .menu {
+      visibility: visible;
+      max-width: 393px;
+    }
+
+    #menu-toggle:checked ~ .menu .links {
+      visibility: visible;
+    }
+
+    #menu-toggle:checked ~ #menu-icon {
+      background: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 26 26" fill="none"><path d="M2.25 25.5L0.5 23.75L8.75 15.5H3V13H13V23H10.5V17.25L2.25 25.5ZM13 13V3H15.5V8.75L23.75 0.5L25.5 2.25L17.25 10.5H23V13H13Z" fill="white"></path></svg>');
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const btons = document.querySelectorAll(".menu__btn");
+    const menuIcon = document.getElementById("menu-toggle") as HTMLInputElement;
+
+    if (!menuIcon || !btons) return;
+
+    btons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        menuIcon.checked = false;
+      });
+    });
+  })();
+</script>

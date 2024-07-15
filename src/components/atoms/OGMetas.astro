@@ -1,0 +1,22 @@
+---
+const props: Props = Astro.props;
+
+interface Props {
+  title: string;
+  description: string;
+  img_social: string;
+}
+---
+
+<meta property="og:locale" content="es_ES" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={props.title} />
+<meta property="og:title" content={props.title} />
+<meta property="og:description" content={props.description} />
+<meta property="og:url" content={props.img_social} />
+<meta property="og:image" content={props.img_social} />
+<meta property="og:image:type" content="image/webp" />
+<meta property="og:image:secure_url" content={props.img_social} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
