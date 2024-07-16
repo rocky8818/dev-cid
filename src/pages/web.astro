@@ -1,0 +1,80 @@
+---
+import CallAction from "../components/organisms/CallAction.astro";
+import Footer from "../components/organisms/Footer.astro";
+import Nav from "../components/organisms/Nav.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Desarrollo web | "
+  description="Desarrollo web como agencia digital en "
+  img="https://res.cloudinary.com/dp9ldjfem/image/upload/v1714516496/agency/Social/t2amb5ggyzgdhrwngevs.webp"
+>
+  <Nav />
+  <section>
+    <div class="topContainer">
+      <span class="headDisplay" style="font-family: Space Grotesk, sans-serif;"
+        >WEB
+      </span>
+    </div>
+  </section>
+
+  <section id="diagrama">
+    <h1>Diagrama</h1>
+  </section>
+
+  <section id="description">
+    <div class="infoCnt">
+      <p>
+        Integrall.dev ofrece un servicio integral de desarrollo web que
+        satisface las necesidades más exigentes de nuestros clientes. Nuestro
+        equipo altamente capacitado de diseñadores, desarrolladores y expertos
+        en UX/UI trabaja en estrecha colaboración para crear sitios web
+        personalizados y de alto rendimiento. Aplicamos una fase inicial de
+        investigación y análisis para comprender a fondo los requisitos y
+        objetivos del cliente, así como las tendencias y mejores prácticas del
+        mercado.
+
+        <br /><br />Si buscas una solución de desarrollo web eficiente y de
+        vanguardia, Integrall.dev es tu aliado estratégico. Confía en nuestra
+        experiencia y profesionalismo para llevar tu presencia en línea al
+        siguiente nivel y alcanzar tus metas digitales. Contáctanos ahora y
+        déjanos transformar tu visión en realidad.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Showcase</h2>
+  </section>
+
+  <div style="background-image: url(/images/BgTilts.png);">
+      <CallAction />
+      <Footer />
+
+  </div>
+
+</Layout>
+
+<style>
+    .topContainer{
+        margin-left: 40px;
+    }
+  .headDisplay {
+    font-family: "space-grotesk", sans-serif;
+    font-size: 60px;
+    font-weight: 200;
+
+    @media (min-width: 980px) {
+      font-size: 120px;
+    }
+  }
+
+  .infoCnt{
+    padding: 40px;
+    p{
+        line-height: 1.8;
+        font-size: 16px;
+    }
+  }
+</style>

@@ -1,0 +1,145 @@
+---
+
+interface Banner {
+        id: any;
+        proyect: string;
+        img_social: string;
+        projectId: any;
+}
+
+import { getBanner } from "../../lib/devFunctions";
+
+const projectsData = await getBanner();
+
+projectsData.map((banner: Banner) => {
+  banner.projectId = projectsData.find((project: any) => project.titulo == banner.proyect)
+})
+---
+
+
+<section>
+  <div class="carousel carousel__l" id="carousel">
+    <div class="carousel__body carousel__body__l">
+      {
+        projectsData.slice(0, 8).map((banner: Banner) => (
+          <>
+            <a
+              title={`Proyecto para ${banner.proyect}`}
+              href={`/proyectos/${banner.projectId.id}`}
+            >
+              <img
+                loading="lazy"
+                src={banner.img_social}
+                alt={` Proyecto para ${banner.proyect} agencia de publicidad | agencia de diseño | agencia digital`}
+              />
+            </a>
+          </>
+        ))
+      }
+      {
+        projectsData.slice(0, 8).map((banner: Banner) => (
+          <>
+            <a
+              title={`Proyecto para ${banner.proyect}`}
+              href={`/proyectos/${banner.projectId.id}`}
+            >
+              <img loading="lazy" src={banner.img_social} alt="" />
+            </a>
+          </>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="carousel carousel__r">
+    <div class="carousel__body carousel__body__r">
+      {
+        projectsData.slice(8, projectsData.length).map((banner: Banner) => (
+          <a
+            title={`Proyecto para ${banner.proyect}`}
+            href={`/proyectos/${banner.projectId.id}`}
+          >
+            <img src={banner.img_social} alt="" />
+          </a>
+        ))
+      }
+      {
+        projectsData.slice(8, projectsData.length).map((banner: Banner) => (
+          <a
+            title={`Proyecto para ${banner.proyect}`}
+            href={`/proyectos/${banner.projectId.id}`}
+          >
+            <img src={banner.img_social} alt="" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @keyframes slidel {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes slider {
+    from {
+      transform: translateX(-70%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  section {
+    margin-bottom: 86px;
+  }
+
+  .carousel {
+    a {
+      text-decoration: none;
+    }
+    overflow: hidden;
+    // padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .carousel:hover .carousel__body {
+    animation-play-state: paused;
+
+    &.carousel__body__l {
+      animation-play-state: paused;
+    }
+  }
+
+  .carousel__body {
+    display: inline-block;
+    padding: 4px 0;
+
+    &.carousel__body__l {
+      animation: 40s slidel infinite linear;
+    }
+
+    &.carousel__body__r {
+      animation: 80s slider infinite linear;
+    }
+  }
+
+  .carousel__body img {
+    height: 231px;
+    margin: 0 4px;
+    border-radius: 23px;
+
+    transition: height 0.7s ease-in-out;
+
+    @media screen and (min-width: 1300px) {
+      height: 332px;
+    }
+  }
+</style>
