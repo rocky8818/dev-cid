@@ -1,0 +1,94 @@
+---
+
+---
+
+<section id="links">
+  <div class="linksContainer">
+    <div class="titleContainer">
+      <h3
+        class="linksTitle"
+      >
+        Desarrollo<br /> de software
+      </h3>
+    </div>
+    <div class="links">
+      <div class="services">
+        <a class="agH2" href="">web</a>
+      </div>
+      <div class="services">
+        <a class="agH2" href="">apps</a>
+      </div>
+      <div class="services">
+        <a class="agH2" href="">stores</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  body {
+    font-family: "Satoshi", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .linksContainer {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 980px) {
+      padding: 0 60px;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    max-width: 330px;
+  }
+  .services {
+    border-bottom: solid 1px white;
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .agH2 {
+    font-family: "space-grotesk", sans-serif;
+    font-size: 40px;
+
+    @media(min-width: 980px){
+      font-size: 60px;
+    }
+  }
+
+  .linksTitle {
+    margin-top: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Satoshi, sans-serif;
+    font-weight: 100;
+    @media(min-width: 980px){
+      font-size: 32px;
+    }
+  }
+
+  .titleContainer{
+    width: 330px;
+    @media(min-width: 980px){
+      width: 230px;
+    }
+  }
+</style>

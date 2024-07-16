@@ -2,43 +2,53 @@
 import Nav from "../components/organisms/Nav.astro";
 import Layout from "../layouts/Layout.astro";
 
-
+import CallAction from "../components/organisms/CallAction.astro";
+import Footer from "../components/organisms/Footer.astro";
+import Intro from "../components/organisms/Intro.astro";
+import Servicios from "../components/organisms/Servicios.astro";
+import Carrusel from "../components/organisms/Carrusel.astro";
+import TopSection from "../components/organisms/TopSection.astro";
 ---
 
 <Layout
-title="Desarrollo web, desarrollo de aplicaciones | "
-description="Desarrollo web y desarrollo de aplicaciones como agencia digital en "
-img="https://res.cloudinary.com/dp9ldjfem/image/upload/v1714516496/agency/Social/t2amb5ggyzgdhrwngevs.webp"
+  title="Desarrollo web, desarrollo de aplicaciones | "
+  description="Desarrollo web y desarrollo de aplicaciones como agencia digital en "
+  img="https://res.cloudinary.com/dp9ldjfem/image/upload/v1714516496/agency/Social/t2amb5ggyzgdhrwngevs.webp"
 >
+  <Nav />
+<div style="background-image: url(/images/BgTilts.png);">
 
-<Nav />
+  <TopSection />
+  
+  
+  <Carrusel />
+  
+  
+  <Servicios />
+  
+</div>
 
-<section id="top">
-	<div style="display: flex; justify-content: center; align-items: center;">
+  <Intro />
+<div style="background-image: url(/images/BgTilts.png);">
 
-		<span>Integrall<br>.Dev <a href="">saber más <span>+</span></a></span>
-	</div>
-</section>
+  <CallAction />
+  
+  
+  <Footer />
+</div>
 
-<section id="carrusel">
-
-	<div>
-		<h3 style="text-transform: uppercase">Desarrollo<br> de software</h3>
-	</div>
-</section>
-
-<section id="links">
-	<div>
-		<a href="">web</a>
-		<hr>
-
-		<a href="">apps</a>
-		<hr>
-
-		<a href="">stores</a>
-		<hr>
-		
-	</div>
-</section>
 
 </Layout>
+
+<style>
+  body {
+    font-family: "Satoshi", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+
+</style>

@@ -1,0 +1,60 @@
+---
+import PlusCircle from "../icons/PlusCircle.astro";
+
+
+---
+
+<section id="top">
+  <div class="topContainer">
+    <span class="headDisplay" style="font-family: Space Grotesk, sans-serif;"
+      >INTEGRALL<br />.DEV
+    </span>
+    <button class="moreInfo">
+      saber más <span><PlusCircle /></span>
+    </button>
+  </div>
+
+</section>
+
+<style lang="scss">
+  .headDisplay {
+    font-family: "space-grotesk", sans-serif;
+    font-size: 60px;
+    font-weight: 200;
+
+    @media (min-width: 980px) {
+      font-size: 120px;
+    }
+  }
+
+  .topContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 980px) {
+      padding-left: 85px;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  .moreInfo{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    color: white;
+    border-radius: 24px;
+    background-color: #2c2c2cf5;
+    backdrop-filter: blur(10px);
+    border: solid 1px white;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+</style>
